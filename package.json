@@ -1,0 +1,16 @@
+{
+  "name": "language-pest",
+  "version": "0.0.0",
+  "description": "Support for the Pest parser generator language",
+  "repository": "https://github.com/tolziplohu/language-pest",
+  "keywords": [
+    "syntax",
+    "highlighting",
+    "grammar"
+  ],
+  "license": "MIT",
+  "bugs": "https://github.com/tolziplohu/language-pest/issues",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

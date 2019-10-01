@@ -1,0 +1,4 @@
+'.source.pest':
+    'editor':
+        # Required to make Ctrl-/ work
+        'commentStart': '// '

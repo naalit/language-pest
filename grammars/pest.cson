@@ -1,0 +1,54 @@
+scopeName: 'source.pest'
+name: 'Pest'
+fileTypes: [ 'pest' ]
+limitLineLength: false
+
+patterns: [
+  {
+    match: '//.*$'
+    name: 'comment.line.pest'
+  }
+  {
+    match: '([a-zA-Z_][a-zA-Z_0-9]*)\\s*(\\=)'
+    captures:
+        1: name: 'entity.function.name.pest'
+        2: name: 'keyword.operator.assignment.pest'
+  }
+  {
+    match: '(@|\\!|_|\\$)\\s*(?=\\{)'
+    # I'm not sure what scope to use here
+    name: 'storage.modifier.pest'
+  }
+  {
+    match: '(\\||\\~|\\.\\.)'
+    name: 'keyword.operator.binary.pest'
+  }
+  {
+    match: '(\\*|\\+)'
+    name: 'keyword.operator.post.pest'
+  }
+  {
+    match: '(\\&|\\!)'
+    # I put these as control and not operator because I want them to show up differently
+    name: 'keyword.control.lookahead.pest'
+  }
+  {
+    match: '\'.\''
+    name: 'constant.character.pest'
+  }
+  {
+    match: '\\b(WHITESPACE|COMMENT|ANY|SOI|EOI|PUSH|POP|PEEK|DROP|PEEK_ALL|POP_ALL|NEWLINE|ASCII(_DIGIT|_NONZERO_DIGIT|_(BIN|OCT|HEX)_DIGIT|_ALPHA(_LOWER|_UPPER|NUMERIC|)|))\\b'
+    name: 'support.constant.pest'
+  }
+  {
+    begin: '(\\^)?"'
+    end: '(?=[^\\\\])"'
+    name: 'constant.string.pest'
+    patterns: [
+      {
+        match: '\\\\.'
+        name: 'constant.character.escape.pest'
+      }
+    ]
+  }
+]
